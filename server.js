@@ -15,5 +15,31 @@ app.post("/webhook",(req,res)=>{
 console.log(req.body);
 res.sendStatus(200);
 });
+app.get("/privacy", (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Política de Privacidade - Genora IA</title>
+      </head>
+      <body style="font-family: Arial; max-width: 800px; margin: 40px auto; line-height: 1.6;">
+        <h1>Política de Privacidade - Genora IA</h1>
 
+        <p>A Genora IA utiliza informações fornecidas pelos usuários exclusivamente para atendimento, comunicação e prestação de serviços por meio do WhatsApp.</p>
+
+        <p>Os dados podem incluir nome, telefone, mensagens enviadas e demais informações fornecidas voluntariamente durante o atendimento.</p>
+
+        <p>Os dados não são vendidos nem comercializados com terceiros.</p>
+
+        <p>As informações podem ser processadas por serviços necessários ao funcionamento da plataforma, incluindo infraestrutura de hospedagem, serviços de inteligência artificial e a plataforma WhatsApp Business da Meta.</p>
+
+        <p>O usuário poderá solicitar informações, correção ou exclusão de seus dados entrando em contato com o responsável pela Genora IA.</p>
+
+        <p>Esta política poderá ser atualizada para refletir melhorias no serviço ou alterações legais.</p>
+
+        <p>Última atualização: setembro de 2026.</p>
+      </body>
+    </html>
+  `);
+});
 app.listen(process.env.PORT||10000);
